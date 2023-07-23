@@ -1,4 +1,6 @@
+import 'package:finalyearproject/ui/Components/text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginInScreen extends StatelessWidget {
   const LoginInScreen({super.key});
@@ -9,66 +11,105 @@ class LoginInScreen extends StatelessWidget {
     final passwordController = TextEditingController();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sign In'),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pushNamed('/signup/');
+          },
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+          ),
+        ),
+        title: const Text(
+          'Sign In',
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+        elevation: 0,
+        backgroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const Text('Sign In'),
-            Form(
-              child: Column(
-                children: [
-                  const Text('Email'),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    width: double.infinity,
-                    child: TextField(
+            SizedBox(height: 20.h),
+            Center(
+              child: Text(
+                'Sign In',
+                style: TextStyle(fontSize: 20.h),
+              ),
+            ),
+            SizedBox(height: 30.h),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              child: Form(
+                child: Column(
+                  children: [
+                    TextFieldd(
+                      labelFor: 'Email',
+                      hintText: 'Enter Your Email',
                       controller: emailController,
-                      decoration: const InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(
-                          horizontal: 20.0,
-                          vertical: 15.0,
-                        ),
-                        hintText: 'Enter Your Email',
-                        border: InputBorder.none,
-                        label: Text('Email'),
-                      ),
                     ),
-                  ),
-                  //
-                  const SizedBox(height: 10.0),
-                  const Text('Password'),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    width: double.infinity,
-                    child: TextField(
+                    SizedBox(height: 20.h),
+                    TextFieldd(
+                      labelFor: 'Password',
+                      hintText: 'Enter Your Password',
                       controller: passwordController,
-                      decoration: const InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(
-                          horizontal: 20.0,
-                          vertical: 15.0,
+                    ),
+                    SizedBox(height: 30.h),
+                    Container(
+                      width: double.infinity,
+                      height: 60.0,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15.0),
+                        color: Colors.black.withOpacity(0.4),
+                      ),
+                      child: Center(
+                        child: Text(
+                          'Sign In',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20.h,
+                          ),
                         ),
-                        hintText: 'Enter Your Password',
-                        border: InputBorder.none,
-                        label: Text('Password'),
                       ),
                     ),
-                  ),
-                  Container(
-                    width: double.infinity,
-                    height: 100.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
+                    Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text('Don"t Have an Account ?'),
+                            TextButton(
+                              onPressed: () {
+                                Navigator.of(context).pushNamed("/signup/");
+                              },
+                              child: const Text(
+                                'SignUp',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  decoration: TextDecoration.underline,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pushNamed('/forgotpassword/');
+                          },
+                          child: const Text(
+                            'Recover Password',
+                            style: TextStyle(
+                              color: Colors.black,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                    child: const Center(
-                      child: Text('Sign In'),
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ],

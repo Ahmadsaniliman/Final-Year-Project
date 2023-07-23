@@ -1,4 +1,6 @@
+import 'package:finalyearproject/ui/Components/text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
   const ForgotPasswordScreen({super.key});
@@ -8,42 +10,62 @@ class ForgotPasswordScreen extends StatelessWidget {
     final forgetPasswordController = TextEditingController();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Forgot Password'),
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pushNamed('/signin/');
+          },
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+          ),
+        ),
+        title: const Text(
+          'Forgot Password',
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
       ),
       body: SingleChildScrollView(
-        child: Form(
-          child: Column(
-            children: [
-              const Text('Email'),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: 20.w,
+          ),
+          child: Form(
+            child: Column(
+              children: [
+                SizedBox(height: 30.h),
+                Text(
+                  'Forgot Password',
+                  style: TextStyle(fontSize: 20.h),
                 ),
-                width: double.infinity,
-                child: TextField(
+                TextFieldd(
+                  labelFor: 'Email',
+                  hintText: 'Enter Your Email',
                   controller: forgetPasswordController,
-                  decoration: const InputDecoration(
-                    contentPadding: EdgeInsets.symmetric(
-                      horizontal: 20.0,
-                      vertical: 15.0,
+                ),
+                SizedBox(height: 20.h),
+                Container(
+                  width: double.infinity,
+                  height: 60.0,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15.0),
+                    color: Colors.black.withOpacity(0.4),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Reset Password',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20.h,
+                      ),
                     ),
-                    hintText: 'Enter Your Email',
-                    border: InputBorder.none,
-                    label: Text('Password'),
                   ),
                 ),
-              ),
-              Container(
-                width: double.infinity,
-                height: 100.0,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                child: const Center(
-                  child: Text('Reset Password'),
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

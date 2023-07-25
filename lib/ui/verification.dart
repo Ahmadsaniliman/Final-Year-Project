@@ -7,25 +7,6 @@ class VerifyEmailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.of(context).pushNamed('/signin/');
-          },
-          icon: const Icon(
-            Icons.arrow_back_ios,
-            color: Colors.black,
-          ),
-        ),
-        backgroundColor: Colors.white,
-        elevation: 0,
-        title: const Text(
-          'Verify Email',
-          style: TextStyle(
-            color: Colors.black,
-          ),
-        ),
-      ),
       body: Padding(
         padding: EdgeInsets.symmetric(
           vertical: 40.h,
@@ -33,6 +14,27 @@ class VerifyEmailScreen extends StatelessWidget {
         ),
         child: Column(
           children: [
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 20.h),
+              child: Row(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('/signin/');
+                    },
+                    icon: const Icon(
+                      Icons.arrow_back_ios,
+                    ),
+                  ),
+                  const Text(
+                    'Verify Email',
+                    style: TextStyle(
+                      fontSize: 25,
+                    ),
+                  ),
+                ],
+              ),
+            ),
             const Text(
                 'We Have Sent You a mail to verify your email thank you'),
             SizedBox(height: 20.h),
@@ -43,7 +45,7 @@ class VerifyEmailScreen extends StatelessWidget {
               height: 60.0,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.0),
-                color: Colors.black.withOpacity(0.4),
+                color: Colors.blue,
               ),
               child: const Center(
                 child: Text(

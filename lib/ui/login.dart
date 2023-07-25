@@ -10,36 +10,28 @@ class LoginInScreen extends StatelessWidget {
     final emailController = TextEditingController();
     final passwordController = TextEditingController();
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.of(context).pushNamed('/signup/');
-          },
-          icon: const Icon(
-            Icons.arrow_back_ios,
-            color: Colors.black,
-          ),
-        ),
-        title: const Text(
-          'Sign In',
-          style: TextStyle(
-            color: Colors.black,
-          ),
-        ),
-        elevation: 0,
-        backgroundColor: Colors.white,
-      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 20.h),
-            Center(
-              child: Text(
-                'Sign In',
-                style: TextStyle(fontSize: 20.h),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                vertical: 50.h,
+                horizontal: 10.w,
+              ),
+              child: Row(
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.arrow_back_ios),
+                  ),
+                  Text(
+                    'Sign In',
+                    textAlign: TextAlign.start,
+                    style: TextStyle(fontSize: 25.h),
+                  ),
+                ],
               ),
             ),
-            SizedBox(height: 30.h),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Form(
@@ -57,19 +49,24 @@ class LoginInScreen extends StatelessWidget {
                       controller: passwordController,
                     ),
                     SizedBox(height: 30.h),
-                    Container(
-                      width: double.infinity,
-                      height: 60.0,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15.0),
-                        color: Colors.black.withOpacity(0.4),
-                      ),
-                      child: Center(
-                        child: Text(
-                          'Sign In',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20.h,
+                    GestureDetector(
+                      onTap : () {
+                         Navigator.of(context).pushNamed("/homepage/");
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        height: 60.0,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15.0),
+                          color: Colors.blue,
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Sign In',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20.h,
+                            ),
                           ),
                         ),
                       ),
@@ -82,7 +79,7 @@ class LoginInScreen extends StatelessWidget {
                             const Text('Don"t Have an Account ?'),
                             TextButton(
                               onPressed: () {
-                                Navigator.of(context).pushNamed("/signup/");
+                                Navigator.of(context).pushNamed("/homepage/");
                               },
                               child: const Text(
                                 'SignUp',

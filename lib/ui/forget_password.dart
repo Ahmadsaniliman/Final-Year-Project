@@ -9,63 +9,63 @@ class ForgotPasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final forgetPasswordController = TextEditingController();
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.of(context).pushNamed('/signin/');
-          },
-          icon: const Icon(
-            Icons.arrow_back_ios,
-            color: Colors.black,
-          ),
-        ),
-        title: const Text(
-          'Forgot Password',
-          style: TextStyle(
-            color: Colors.black,
-          ),
-        ),
-      ),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: 20.w,
-          ),
-          child: Form(
-            child: Column(
-              children: [
-                SizedBox(height: 30.h),
-                Text(
-                  'Forgot Password',
-                  style: TextStyle(fontSize: 20.h),
+        child: Form(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  vertical: 50.h,
+                  horizontal: 10.w,
                 ),
-                TextFieldd(
-                  labelFor: 'Email',
-                  hintText: 'Enter Your Email',
-                  controller: forgetPasswordController,
+                child: Row(
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        Navigator.of(context).pushNamed('/signin/');
+                      },
+                      icon: const Icon(Icons.arrow_back_ios),
+                    ),
+                    Text(
+                      'Forgot Password',
+                      textAlign: TextAlign.start,
+                      style: TextStyle(fontSize: 25.h),
+                    ),
+                  ],
                 ),
-                SizedBox(height: 20.h),
-                Container(
-                  width: double.infinity,
-                  height: 60.0,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15.0),
-                    color: Colors.black.withOpacity(0.4),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Reset Password',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.h,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: Column(
+                  children: [
+                    TextFieldd(
+                      labelFor: 'Email',
+                      hintText: 'Enter Your Email',
+                      controller: forgetPasswordController,
+                    ),
+                    SizedBox(height: 20.h),
+                    Container(
+                      width: double.infinity,
+                      height: 60.0,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15.0),
+                        color: Colors.blue,
+                      ),
+                      child: Center(
+                        child: Text(
+                          'Reset Password',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20.h,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

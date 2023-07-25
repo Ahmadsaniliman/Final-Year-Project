@@ -11,29 +11,26 @@ class SignUpScreen extends StatelessWidget {
     final emailController = TextEditingController();
     final passwordController = TextEditingController();
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
-        ),
-        title: const Text(
-          'Sign Up',
-          style: TextStyle(color: Colors.black),
-        ),
-        elevation: 0,
-        backgroundColor: Colors.white,
-        // centerTitle: true,
-      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Padding(
               padding: EdgeInsets.symmetric(
-                vertical: 20.h,
+                vertical: 50.h,
+                horizontal: 10.w,
               ),
-              child: Text(
-                'Sign Up',
-                style: TextStyle(fontSize: 20.h),
+              child: Row(
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.arrow_back_ios),
+                  ),
+                  Text(
+                    'Sign Up',
+                    textAlign: TextAlign.start,
+                    style: TextStyle(fontSize: 25.h),
+                  ),
+                ],
               ),
             ),
             Padding(
@@ -69,7 +66,7 @@ class SignUpScreen extends StatelessWidget {
                         height: 60.0,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15.0),
-                          color: Colors.black.withOpacity(0.4),
+                           color: Colors.blue,
                         ),
                         child: Center(
                           child: Text(

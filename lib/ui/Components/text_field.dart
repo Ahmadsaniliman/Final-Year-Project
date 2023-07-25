@@ -30,14 +30,18 @@ class TextFieldd extends StatelessWidget {
           child: TextField(
             controller: controller,
             decoration: InputDecoration(
-              // floatingLabelBehavior: FloatingLabelBehavior.always,
+              // focusedBorder: OutlineInputBorder(
+              //   borderRadius: BorderRadius.circular(28),
+              //   gapPadding: 10,
+              //   borderSide: const BorderSide(color: Colors.black),
+              // ),
+              
               contentPadding: const EdgeInsets.symmetric(
                 horizontal: 20.0,
                 vertical: 15.0,
               ),
               hintText: hintText,
               border: InputBorder.none,
-              label: Text(labelFor),
             ),
           ),
         ),

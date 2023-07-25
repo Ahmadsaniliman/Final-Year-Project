@@ -1,8 +1,8 @@
 import 'package:finalyearproject/ui/DataModels/doctors.dart';
 import 'package:flutter/material.dart';
-
-class DoctorsdetailsScreen extends StatelessWidget {
-  const DoctorsdetailsScreen({super.key});
+class AvailableDoctorsdetailsScreen extends StatelessWidget {
+  const AvailableDoctorsdetailsScreen({super.key, required this.doctorDetails});
+  final SpecialDoctors doctorDetails;
 
   @override
   Widget build(BuildContext context) {
@@ -12,8 +12,7 @@ class DoctorsdetailsScreen extends StatelessWidget {
           onPressed: () {},
           icon: const Icon(Icons.arrow_back_ios),
         ),
-        title: const Text('Liman'),
-        elevation : 0,
+        title: Text(doctorDetails.name),
         centerTitle: true,
       ),
       body: Column(
@@ -22,7 +21,7 @@ class DoctorsdetailsScreen extends StatelessWidget {
             height: 200.0,
             width: double.infinity,
             child: Image.asset(
-              'assets/images/doctor2.webp',
+              doctorDetails.image,
               fit: BoxFit.cover,
             ),
           ),

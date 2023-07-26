@@ -1,7 +1,8 @@
-import 'package:finalyearproject/ui/doctor_details.dart';
+import 'package:finalyearproject/ui/appointment_page.dart';
 import 'package:finalyearproject/ui/forget_password.dart';
 import 'package:finalyearproject/ui/home_page.dart';
 import 'package:finalyearproject/ui/login.dart';
+import 'package:finalyearproject/ui/profile.dart';
 import 'package:finalyearproject/ui/sign_up.dart';
 import 'package:finalyearproject/ui/verification.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
           title: 'Hospital AppointmentApp',
           theme: ThemeData(),
           debugShowCheckedModeBanner: false,
-          home: const DoctorsdetailsScreen(),
+          home: const AppoitmentPageScreen(),
           routes: {
             '/signup/': (context) => const SignUpScreen(),
             '/signin/': (context) => const LoginInScreen(),

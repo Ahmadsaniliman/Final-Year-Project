@@ -8,14 +8,15 @@ class TextFieldd extends StatelessWidget {
     required this.hintText,
     required this.controller,
   });
-  final String labelFor, hintText;
+  final String? labelFor;
+  final String hintText;
   final TextEditingController controller;
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(labelFor),
+        Text(labelFor!),
         SizedBox(height: 10.h),
         Container(
           decoration: BoxDecoration(
@@ -35,7 +36,7 @@ class TextFieldd extends StatelessWidget {
               //   gapPadding: 10,
               //   borderSide: const BorderSide(color: Colors.black),
               // ),
-              
+
               contentPadding: const EdgeInsets.symmetric(
                 horizontal: 20.0,
                 vertical: 15.0,

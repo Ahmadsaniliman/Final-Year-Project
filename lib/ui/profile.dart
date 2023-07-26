@@ -16,24 +16,25 @@ class ProfileScreen extends StatelessWidget {
           },
           icon: const Icon(
             Icons.arrow_back_ios,
-            color: Colors.black,
+            color: Colors.white,
           ),
         ),
         elevation: 0,
-        backgroundColor: Colors.white,
+        centerTitle: true,
         title: const Text(
           'Profile',
           style: TextStyle(
-            color: Colors.black,
+            color: Colors.white,
           ),
         ),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(height: 25.h.w),
             Container(
               height: 100.h,
-              width: 150.w,
+              width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(
                   20.0,
@@ -41,30 +42,36 @@ class ProfileScreen extends StatelessWidget {
                 border: Border.all(),
               ),
             ),
-            Form(
-              child: Column(
-                children: [
-                  TextFieldd(
-                    labelFor: 'First Name',
-                    hintText: 'First Name',
-                    controller: emailController,
-                  ),
-                  TextFieldd(
-                    labelFor: 'First Name',
-                    hintText: 'First Name',
-                    controller: emailController,
-                  ),
-                  TextFieldd(
-                    labelFor: 'Department',
-                    hintText: 'Department',
-                    controller: emailController,
-                  ),
-                  TextFieldd(
-                    labelFor: 'Phone Number',
-                    hintText: 'Phone Number',
-                    controller: emailController,
-                  ),
-                ],
+            Padding(
+              padding: EdgeInsets.symmetric(
+                vertical: 25.h.w,
+                horizontal: 20.h.w,
+              ),
+              child: Form(
+                child: Column(
+                  children: [
+                    TextFieldd(
+                      labelFor: '',
+                      hintText: 'First Name',
+                      controller: emailController,
+                    ),
+                    TextFieldd(
+                      labelFor: 'First Name',
+                      hintText: 'Last Name',
+                      controller: emailController,
+                    ),
+                    TextFieldd(
+                      labelFor: 'Department',
+                      hintText: 'Department',
+                      controller: emailController,
+                    ),
+                    TextFieldd(
+                      labelFor: 'Department',
+                      hintText: 'Phone Number',
+                      controller: emailController,
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
